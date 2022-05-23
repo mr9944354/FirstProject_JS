@@ -1,0 +1,171 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/*===== VARIABLES CSS =====*/
+
+/*=== Colores ===*/
+:root{
+    --first-color: #12192C;
+    --text-color: #8590AD;
+}
+
+/*=== Fuente y tipografia ===*/
+:root{
+    --body-font: 'Roboto', sans-serif;
+    --big-font-size: 2rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.875rem;
+}
+@media screen and (min-width: 700px){
+    :root{
+        --big-font-size: 2.5rem;
+        --normal-font-size: 1rem;
+    }  
+}
+
+ 
+
+/*===== BASE =====*/
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 100px;
+    font-family: var(--body-font);
+    color: var(--first-color);
+     background: linear-gradient(rgba(0, 0, 255, 0.212), rgba(255, 192, 203, 0.212)); 
+}
+ .hideModalTriggerButton{
+    visibility: hidden;
+}
+
+
+h1{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+/*===== FORM =====*/
+.l-form{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 35px;
+background: linear-gradient(145deg, #e6e1e1, #ffffff);
+box-shadow:  20px 20px 6px #666464,
+             -20px -20px 6px #ffffff;
+    background:linear-gradient(to right, blue, pink);
+    background: linear-gradient(to bottom right, blue, pink);
+}
+
+/*=== Shapes ===*/
+.shape1,
+.shape2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.shape1{
+    top: -7rem;
+    left: -3.5rem;
+    background: linear-gradient(180deg, var(--first-color) 0%, rgba(196,196,196,0) 100%);
+}
+.shape2{
+    bottom: -6rem;
+    right: -5.5rem;
+    background: linear-gradient(180deg, var(--first-color) 0%, rgba(196,196,196,0) 100%);
+    transform: rotate(180deg);
+}
+/*=== Form ===*/
+.form{
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: auto;
+}
+.form__content{
+    width: 290px;
+}
+.form__img{
+    display: none;
+}
+.form__button{
+    width: 100%;
+    padding: 1rem;
+    font-size: var(--normal-font-size);
+    outline: none;
+    border: none;
+    margin-bottom: 3rem;
+    background-color: var(--first-color);
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.form__button:hover{
+    box-shadow: 0px 15px 36px rgba(0,0,0,.15);
+}
+
+/*=== Form social===*/
+.form__social{
+    text-align: center;
+}
+.form__social-text{
+    display: block;
+    font-size: var(--normal-font-size);
+    margin-bottom: 1rem;
+}
+.form__social-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 1rem;
+    padding: .5rem;
+    background-color: var(--text-color);
+    color: #fff;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+.form__social-icon:hover{
+    background-color: var(--first-color);
+}
+/*===== MEDIA QUERIS =====*/
+@media screen and (min-width: 968px){
+    .shape1{
+        width: 400px;
+        height: 400px;
+        top: -11rem;
+        left: -6.5rem;
+    }
+    .shape2{
+        width: 300px;
+        height: 300px;
+        right: -6.5rem;
+    }
+
+    .form{
+        grid-template-columns: 1.5fr 1fr;
+        padding: 0 2rem;
+    }
+    .form__content{
+        width: 320px;
+    }
+    .form__img{
+        display: block;
+        width: 700px;
+        justify-self: center;
+    }
+}
+

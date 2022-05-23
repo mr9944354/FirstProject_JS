@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        table th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body bgcolor="lightgreen"><br>
+    <div class="input-group flex-nowrap" style="width: 500px; margin-left :300px;;">
+        <span class="input-group-text" id="addon-wrapping"><img src="./search.svg"></span>
+        <input id="searchfield" type="text" class="form-control" placeholder="search by username"  aria-label="Username" aria-describedby="addon-wrapping">
+        <button type="button" onclick="search()" class="btn btn-dark">SEARCH</button>
+    </div>
+    <h1 id="h1">Welcome to CITMA</h1>
+    <table  class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th> UserName</th>
+                <th> Mobile_No</th>
+                <th> Email</th>
+                <th> Password</th>
+                <th> Confirm_password</th>
+                <th> gender</th>
+                <th> qualification</th>
+                <th> course</th>
+                <th> Address</th>
+
+            </tr>
+        </thead>
+        <tbody id="tableRowToChange">
+
+        </tbody>
+    </table>
+    <script>
+        let placeHolderData= [
+            "search by phone number",
+            "search by mail",
+            "search by name",
+            "search by fullname"
+             ]
+    function randomNumber(minimum, maximum){
+             return Math.round( Math.random() * (maximum - minimum) + minimum);
+            }
+
+         
+    setInterval(function()
+     {
+        document.getElementById("searchfield").placeholder=placeHolderData[randomNumber(0,3)];
+        
+    }, 2000);
+    
+       async function oputput(){
+            var dataGotFromServer =  await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=MOHAN_PROJECT_WORK");
+            let findData = await dataGotFromServer.json();
+            console.log(await findData);
+            debugger
+            for(i=0;i<findData.length;i++){
+                document.getElementById("tableRowToChange").innerHTML +=
+                `<tr><td>${findData[i].FULL_NAME}</td>
+                    <td>${findData[i]. USERNAME}</td>
+                    <td>${findData[i].PHONE_NO}</td>
+                    <td>${findData[i].EMAIL}</td>
+                    <td>${findData[i].PASSWORD}</td>
+                    <td>${findData[i].CON_PASSWORD}</td>
+                    <td>${findData[i].GENDER}</td>
+                    <td>${findData[i].QUALIFICATION}</td>
+                    <td>${findData[i].COURSE}</td>
+                    <td>${findData[i].ADDRESS}</td></tr>`
+            }
+            }
+            oputput();
+
+            
+       async function search(){
+            var dataGotFromServer =  await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=MOHAN_PROJECT_WORK");
+            let findData = await dataGotFromServer.json();
+            console.log(await findData);
+            debugger
+            findData.filter(function(e) {
+                return e.PHONE_NO==document.getElementById("searchfield").value
+            })
+            document.getElementById("tableRowToChange").innerHTML='';
+
+            for(i=0;i<findData.length;i++){
+                document.getElementById("tableRowToChange").innerHTML +=
+                `<tr><td>${findData[i].FULL_NAME}</td>
+                    <td>${findData[i]. USERNAME}</td>
+                    <td>${findData[i].PHONE_NO}</td>
+                    <td>${findData[i].EMAIL}</td>
+                    <td>${findData[i].PASSWORD}</td>
+                    <td>${findData[i].CON_PASSWORD}</td>
+                    <td>${findData[i].GENDER}</td>
+                    <td>${findData[i].QUALIFICATION}</td>
+                    <td>${findData[i].COURSE}</td>
+                    <td>${findData[i].ADDRESS}</td></tr>`
+            }
+            }
+        
+    </script>
+</body>
+</html>

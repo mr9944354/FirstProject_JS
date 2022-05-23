@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="./FILE/FORM.CSS">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <title>Login form responsive</title>  
+    </head>
+    <body>
+            <!-- Button trigger modal -->
+<!-- <button type="button"  id="modalpopup" class="btn btn-primary hideModalTriggerButton"  data-bs-toggle="modal" data-bs-target="#exampleModal" > 
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+ 
+        <div class="l-form">
+            <div class="shape1"></div>
+            <div class="shape2"></div>
+
+            <div class="form">
+                <img src="./FILE/Information flow_Two Color.svg" alt="image" class="form__img">
+
+                <form name="form1" id="form1" class="form__content" >
+                    <h1 class="form__title">Welcome</h1>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" ><img src="./FILE/person-circle.svg" alt=""></span>
+                        <input type="text" class="form-control" id="FullName" placeholder="Fullname" aria-label="Fullname"  aria-describedby="basic-addon1" >
+                      </div>
+                      <!-- <span id="FullNameSpan"></span> -->
+
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" >@</span>
+                        <input type="text" class="form-control"  placeholder="Username" aria-label="Username"  id="username" aria-describedby="inputGroupPrepend2" >
+                  
+                      </div>
+                      <!-- <span id="usernameSpan"></span> -->
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" ><img src="./FILE/phone-fill.svg" alt=""></span>
+                        <input type="text" maxlength="10" class="form-control" id="PhoneNo" placeholder="Phone No" aria-label="Phone No" aria-describedby="basic-addon1" >
+                      </div>
+                      <!-- <span id="PhoneNoSpan"></span> -->
+                      
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="./FILE/envelope-fill.svg" alt=""></span>
+                        <input type="text" class="form-control" id="email" placeholder="Email " aria-label="Email" aria-describedby="basic-addon1" >
+                      </div>
+                      <!-- <span id="emailSpan"></span> -->
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="./FILE/key-fill.svg" alt="password"></span>
+                        <input type="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" >
+                      </div>
+                      <!-- <span id="passwordSpan"></span> -->
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><img src="./FILE/key-fill.svg" alt="confirm_password"></span>
+                        <input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="basic-addon1" >
+                      </div>
+                      <!-- <span id="confirm_passwordSpan"></span> -->
+
+                      <div class="mb-3">
+                        <select class="form-select" id="gender" aria-label="select example"  >
+                          <option value=" ">GENDER</option>
+                          <option value="MALE" >MALE</option>
+                          <option value="FEMALE">FEMALE</option>
+                         
+                        </select>
+                        <div class="invalid-feedback">Example invalid select feedback</div>
+                      </div>
+
+                      <div class="mb-3">
+                        <select class="form-select"  id="qualification"  aria-label="select example"  >
+                          <option value=" ">QUALIFICATION</option>
+                          <option value="IT" >IT</option>
+                          <option value="CSE">CSE</option>
+                          <option value="ECE">ECE</option>
+                          <option value="EEE">EEE</option>
+                          <option value="MECH">MECH</option>
+                        </select>
+                        <div class="invalid-feedback">Example invalid select feedback</div>
+                      </div>
+
+                      <div class="mb-3">
+                        <select class="form-select" id="course" aria-label="select example"  >
+                          <option value=" " >COURSE</option>
+                          <option value="FRONTEND" >FRONTEND DEVELOPER</option>
+                          <option value="BACKEND">BACKEND DEVELOPER</option>
+                          <option value="TESTING">TESTING</option>
+                          <option value="DEVOPS">DEVOPS</option>
+                      </select>
+                        <div class="invalid-feedback">Example invalid select feedback</div>
+                      </div>
+                      
+                      
+                      <div class="input-group">
+                        <span class="input-group-text"><img src="./FILE/house-fill.svg" alt=""></span>
+                        <textarea class="form-control" id="address" aria-label="With textarea" placeholder="Address" maxlength="250" ></textarea>
+                      </div>
+                       <!-- <span id="addressSpan"></span> -->
+                      <br>
+                     
+                      
+                      <div class="button">
+                        <input id="myBtn" type="submit" value="Submit" class="form__button" >
+                      </div>
+                     
+                      
+                    <div class="form__social">
+                        <span class="form__social-text">Our login with</span>
+
+                        <a href="https://www.facebook.com/" target="_blank" class="form__social-icon"><i class='bx bxl-facebook' ></i></a>
+                        <a href="http://www.google.com/" target="_blank" class="form__social-icon"><i class='bx bxl-google' ></i></a>
+                        <a href="http://www.instagram.com/" target="_blank" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+     
+        <!-- ===== MAIN JS ===== -->
+       <script src="./FILE/FORM.js"></script>
+        <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+</html>
