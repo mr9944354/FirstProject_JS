@@ -19,9 +19,9 @@
     <div class="input-group flex-nowrap" style="width: 500px; margin-left :300px;;">
         <span class="input-group-text" id="addon-wrapping"><img src="./search.svg"></span>
         <input id="searchfield" type="text" class="form-control" placeholder="search by username"  aria-label="Username" aria-describedby="addon-wrapping">
-        <button type="button" onclick="search()" class="btn btn-dark">SEARCH</button>
+        <button type="submit" onclick="search()" class="btn btn-dark">SEARCH</button>
     </div>
-    <h1 id="h1">Welcome to CITMA</h1>
+    
     <table  class="table table-dark table-striped">
         <thead>
             <tr>
@@ -61,18 +61,18 @@
     }, 2000);
     
        async function oputput(){
-            var dataGotFromServer =  await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=MOHAN_PROJECT_WORK");
+            var dataGotFromServer =  await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=MOHAN_PROJECT_WORKS");
             let findData = await dataGotFromServer.json();
             console.log(await findData);
             debugger
             for(i=0;i<findData.length;i++){
                 document.getElementById("tableRowToChange").innerHTML +=
-                `<tr><td>${findData[i].FULL_NAME}</td>
-                    <td>${findData[i]. USERNAME}</td>
-                    <td>${findData[i].PHONE_NO}</td>
-                    <td>${findData[i].EMAIL}</td>
-                    <td>${findData[i].PASSWORD}</td>
-                    <td>${findData[i].CON_PASSWORD}</td>
+                `<tr><td>${findData[i].APPLICANT_NAME}</td>
+                    <td>${findData[i]. USER_NAME}</td>
+                    <td>${findData[i].PHONE_NUMBER}</td>
+                    <td>${findData[i].EMAIL_ID}</td>
+                    <td>${findData[i].PASS_WORD}</td>
+                    <td>${findData[i].CONFIRM_PASSWORD}</td>
                     <td>${findData[i].GENDER}</td>
                     <td>${findData[i].QUALIFICATION}</td>
                     <td>${findData[i].COURSE}</td>
@@ -83,29 +83,34 @@
 
             
        async function search(){
-            var dataGotFromServer =  await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=MOHAN_PROJECT_WORK");
+            var dataGotFromServer =  await fetch("https://rczversion2.herokuapp.com/api/getregdata?fromCollectionId=MOHAN_PROJECT_WORKS");
             let findData = await dataGotFromServer.json();
             console.log(await findData);
             debugger
-            findData.filter(function(e) {
-                return e.PHONE_NO==document.getElementById("searchfield").value
+
+
+            findData=findData.filter(function(e) {
+                return e.APPLICANT_NAME==document.getElementById("searchfield").value;
+              
+                
             })
-            document.getElementById("tableRowToChange").innerHTML='';
+            document.getElementById("tableRowToChange").innerHTML="";
 
             for(i=0;i<findData.length;i++){
                 document.getElementById("tableRowToChange").innerHTML +=
-                `<tr><td>${findData[i].FULL_NAME}</td>
-                    <td>${findData[i]. USERNAME}</td>
-                    <td>${findData[i].PHONE_NO}</td>
-                    <td>${findData[i].EMAIL}</td>
-                    <td>${findData[i].PASSWORD}</td>
-                    <td>${findData[i].CON_PASSWORD}</td>
+                `<tr><td>${findData[i].APPLICANT_NAME}</td>
+                    <td>${findData[i]. USER_NAME}</td>
+                    <td>${findData[i].PHONE_NUMBER}</td>
+                    <td>${findData[i].EMAIL_ID}</td>
+                    <td>${findData[i].PASS_WORD}</td>
+                    <td>${findData[i].CONFIRM_PASSWORD}</td>
                     <td>${findData[i].GENDER}</td>
                     <td>${findData[i].QUALIFICATION}</td>
                     <td>${findData[i].COURSE}</td>
                     <td>${findData[i].ADDRESS}</td></tr>`
             }
             }
+            
         
     </script>
 </body>

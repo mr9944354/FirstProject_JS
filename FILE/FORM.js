@@ -4,12 +4,12 @@ form1.addEventListener("submit",(e)=>{
 })
  
 function validation() {    
-       var FULL_NAME = document.getElementById("FullName").value;
-      var USERNAME = document.getElementById("username").value;
-      var PHONE_NO = document.getElementById("PhoneNo").value;
-      var EMAIL = document.getElementById("email").value;
-      var PASSWORD = document.getElementById("password").value;
-      var CON_PASSWORD = document.getElementById("confirm_password").value;
+       var APPLICANT_NAME = document.getElementById("FullName").value;
+      var USER_NAME = document.getElementById("username").value;
+      var PHONE_NUMBER = document.getElementById("PhoneNo").value;
+      var EMAIL_ID = document.getElementById("email").value;
+      var PASS_WORD = document.getElementById("password").value;
+      var CONFIRM_PASSWORD = document.getElementById("confirm_password").value;
       var GENDER = document.getElementById('gender').value;
       var QUALIFICATION = document.getElementById('qualification').value;
       var COURSE = document.getElementById('course').value;
@@ -17,7 +17,7 @@ function validation() {
         var errorCount = 0;
 
         //name
-        if (isNaN(FULL_NAME) && FULL_NAME.length > 0) {
+        if (isNaN(APPLICANT_NAME) && APPLICANT_NAME.length > 0) {
         document.getElementById("FullName").style = `color:#212529;
             background-color:#fff;
             border-color:#adff91;
@@ -33,7 +33,7 @@ function validation() {
             
             //username
         }
-        if (USERNAME.includes("@") && USERNAME.length > 0) {
+        if (USER_NAME.includes("@") && USER_NAME.length > 0) {
             document.getElementById("username").style = `color:#212529;
             background-color:#fff;
             border-color:#adff91;
@@ -47,7 +47,7 @@ function validation() {
                 0.25rem rgb(154 243 10);`
         }
         //phone no
-        if (!isNaN(PHONE_NO) && PHONE_NO.length > 0) {
+        if (!isNaN(PHONE_NUMBER) && PHONE_NUMBER.length > 0) {
             document.getElementById("PhoneNo").style = `color:#212529;
             background-color:#fff;
             border-color:#adff91;
@@ -62,7 +62,7 @@ function validation() {
             
         }
         //email
-        if (EMAIL.includes("@") && EMAIL.length > 0 && EMAIL.includes(".")) {
+        if (EMAIL_ID.includes("@") && EMAIL_ID.length > 0 && EMAIL_ID.includes(".")) {
             document.getElementById("email").style = `color:#212529;
             background-color:#fff;
             border-color:#adff91;
@@ -77,7 +77,7 @@ function validation() {
 
         }
         //password
-        if (PASSWORD.includes("@") && PASSWORD.length > 0) {
+        if (PASS_WORD.includes("@") && PASS_WORD.length > 0) {
             document.getElementById("password").style = `color:#212529;
             background-color:#fff;
             border-color:#adff91;
@@ -92,7 +92,7 @@ function validation() {
 
         }
         //confirm password
-        if (CON_PASSWORD.includes("@") && CON_PASSWORD.length > 0 && CON_PASSWORD == PASSWORD) {
+        if (CONFIRM_PASSWORD.includes("@") && CONFIRM_PASSWORD.length > 0 && CONFIRM_PASSWORD == PASS_WORD) {
             document.getElementById("confirm_password").style = `color:#212529;
             background-color:#fff;
             border-color:#adff91;
@@ -175,17 +175,17 @@ function validation() {
 
         async function outputPage() {
             var totalObjectOP = {
-                 FULL_NAME : document.getElementById("FullName").value,
-                 USERNAME : document.getElementById("username").value,
-                 PHONE_NO : document.getElementById("PhoneNo").value,
-                EMAIL : document.getElementById("email").value,
-                 PASSWORD : document.getElementById("password").value,
-                 CON_PASSWORD : document.getElementById("confirm_password").value,
+                 APPLICANT_NAME : document.getElementById("FullName").value,
+                 USER_NAME : document.getElementById("username").value,
+                 PHONE_NUMBER : document.getElementById("PhoneNo").value,
+                EMAIL_ID : document.getElementById("email").value,
+                 PASS_WORD : document.getElementById("password").value,
+                 CONFIRM_PASSWORD : document.getElementById("confirm_password").value,
                  GENDER : document.getElementById('gender').value,
                  QUALIFICATION : document.getElementById('qualification').value,
                  COURSE : document.getElementById('course').value,
                  ADDRESS : document.getElementById("address").value,
-                collectionId: 'MOHAN_PROJECT_WORK',
+                collectionId: 'MOHAN_PROJECT_WORKS',
             }
         
 
