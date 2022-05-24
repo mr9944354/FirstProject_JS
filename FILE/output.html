@@ -29,8 +29,7 @@
                 <th> UserName</th>
                 <th> Mobile_No</th>
                 <th> Email</th>
-                <th> Password</th>
-                <th> Confirm_password</th>
+                 
                 <th> gender</th>
                 <th> qualification</th>
                 <th> course</th>
@@ -71,8 +70,7 @@
                     <td>${findData[i]. USER_NAME}</td>
                     <td>${findData[i].PHONE_NUMBER}</td>
                     <td>${findData[i].EMAIL_ID}</td>
-                    <td>${findData[i].PASS_WORD}</td>
-                    <td>${findData[i].CONFIRM_PASSWORD}</td>
+                    
                     <td>${findData[i].GENDER}</td>
                     <td>${findData[i].QUALIFICATION}</td>
                     <td>${findData[i].COURSE}</td>
@@ -88,12 +86,15 @@
             console.log(await findData);
             debugger
 
+          findData= findData.filter(function(eachdata){
+               return (Object.keys(eachdata).filter(function(currentkey){
+                   return eachdata[currentkey]==document.getElementById("searchfield").value;
+               })).length>0?true:false
+           })
 
-            findData=findData.filter(function(e) {
-                return e.APPLICANT_NAME==document.getElementById("searchfield").value;
-              
-                
-            })
+        //     findData=findData.filter(function(e) {
+        //         return e.APPLICANT_NAME==document.getElementById("searchfield").value;
+        //    })
             document.getElementById("tableRowToChange").innerHTML="";
 
             for(i=0;i<findData.length;i++){
@@ -102,8 +103,7 @@
                     <td>${findData[i]. USER_NAME}</td>
                     <td>${findData[i].PHONE_NUMBER}</td>
                     <td>${findData[i].EMAIL_ID}</td>
-                    <td>${findData[i].PASS_WORD}</td>
-                    <td>${findData[i].CONFIRM_PASSWORD}</td>
+ 
                     <td>${findData[i].GENDER}</td>
                     <td>${findData[i].QUALIFICATION}</td>
                     <td>${findData[i].COURSE}</td>
